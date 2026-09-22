@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruang Diri — Aku Unik, Aku Percaya Diri</title>
+<meta name="description" content="Website layanan pribadi BK tentang mengenal diri, menerima diri, dan membangun kepercayaan diri.">
+<style>
+:root{
+  --sage:#8fb59a; --sage-dark:#52765e; --sage-light:#eaf4ec;
+  --cream:#fffaf2; --peach:#f8d8c7; --yellow:#f7e7a8;
+  --pink:#f3dce7; --blue:#dcecf3; --ink:#314239; --muted:#6d7d73;
+  --white:#fff; --shadow:0 12px 30px rgba(70,95,78,.10); --radius:24px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(255,250,242,.94);backdrop-filter:blur(12px);border-bottom:1px solid #e9eee9}
+.nav{max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;gap:24px}
+.brand{font-weight:900;font-size:1.15rem;color:var(--sage-dark);white-space:nowrap}
+.brand span{display:block;font-size:.72rem;font-weight:600;color:var(--muted)}
+nav{display:flex;gap:7px;overflow:auto;margin-left:auto}
+nav a{padding:8px 12px;border-radius:14px;font-size:.85rem;font-weight:700;color:var(--muted);white-space:nowrap}
+nav a:hover,nav a.active{background:var(--sage-light);color:var(--sage-dark)}
+.menu{display:none;border:0;background:var(--sage-light);padding:9px 12px;border-radius:12px;font-size:1.1rem}
+main{max-width:1180px;margin:auto;padding:28px 22px 80px}
+section{scroll-margin-top:88px;padding:65px 0}
+.hero{min-height:80vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:40px}
+.badge{display:inline-block;background:var(--sage-light);color:var(--sage-dark);padding:7px 14px;border-radius:999px;font-weight:800;font-size:.82rem}
+h1{font-size:clamp(3rem,7vw,6rem);line-height:.98;margin:18px 0 20px;letter-spacing:-.05em}
+h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;margin:10px 0 16px;letter-spacing:-.035em}
+h3{margin:5px 0 8px;font-size:1.2rem}
+.lead{font-size:1.12rem;color:var(--muted);max-width:680px}
+.eyebrow{color:var(--sage-dark);font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--sage-dark);color:#fff;padding:13px 19px;border-radius:16px;font-weight:800;border:0;cursor:pointer;margin-top:18px;box-shadow:0 8px 18px rgba(82,118,94,.18)}
+.btn.alt{background:#fff;color:var(--sage-dark);border:1px solid #dce7de}
+.hero-art{position:relative;min-height:470px;display:grid;place-items:center}
+.blob{width:390px;height:390px;background:var(--sage-light);border-radius:44% 56% 61% 39% / 47% 42% 58% 53%;position:absolute}
+.mirror{width:235px;height:290px;border:14px solid #fff;background:linear-gradient(145deg,#eaf4ec,#fff);border-radius:120px 120px 35px 35px;position:relative;box-shadow:var(--shadow);display:grid;place-items:center;z-index:1}
+.mirror:after{content:"🌱";font-size:5rem}
+.float{position:absolute;background:#fff;padding:13px 16px;border-radius:18px;box-shadow:var(--shadow);font-weight:800;z-index:2}
+.f1{top:40px;left:10px}.f2{right:5px;top:135px}.f3{bottom:45px;left:40px}
+.section-head{max-width:740px;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:#fff;padding:25px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #edf1ed}
+.icon{font-size:2rem;margin-bottom:5px}
+.soft-green{background:var(--sage-light)}.soft-pink{background:var(--pink)}.soft-yellow{background:#fff7d9}.soft-blue{background:var(--blue)}.soft-peach{background:#fff0e8}
+.quote{margin:25px 0;padding:26px 30px;background:var(--sage-light);border-left:6px solid var(--sage-dark);border-radius:18px;font-size:1.2rem;font-weight:800}
+.pill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px}
+.pill{background:#f5f7f5;padding:9px 13px;border-radius:999px;font-weight:700}
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.check{padding:15px 17px;border-radius:17px;background:#fff;border:1px solid #e8eee9}
+.check strong{display:block;color:var(--sage-dark)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.compare .card{height:100%}
+.x{border-top:5px solid #dfaaa4}.ok{border-top:5px solid var(--sage)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.step{background:#fff;padding:20px;border-radius:20px;box-shadow:var(--shadow)}
+.num{width:35px;height:35px;border-radius:50%;background:var(--sage-light);display:grid;place-items:center;font-weight:900;color:var(--sage-dark)}
+.chat{display:grid;gap:14px;max-width:760px;margin:auto}
+.bubble{padding:17px 20px;border-radius:20px;max-width:82%;box-shadow:var(--shadow)}
+.bubble.no{background:#fff0ee;justify-self:start;border-bottom-left-radius:5px}
+.bubble.yes{background:var(--sage-light);justify-self:end;border-bottom-right-radius:5px}
+.reflection{background:#fff;border-radius:28px;padding:30px;box-shadow:var(--shadow)}
+.question{margin:20px 0}
+textarea{width:100%;min-height:90px;resize:vertical;border:1px solid #dce5df;border-radius:15px;padding:13px;font:inherit;color:var(--ink);background:#fbfdfb}
+textarea:focus{outline:3px solid #e5f0e7;border-color:var(--sage)}
+.progress{height:10px;background:#edf1ed;border-radius:99px;overflow:hidden;margin:15px 0 25px}
+.progress span{display:block;height:100%;width:0;background:var(--sage);transition:.3s}
+.closing{min-height:75vh;display:grid;place-items:center;text-align:center}
+.mantra{display:grid;gap:8px;margin:28px auto;max-width:650px;font-size:1.25rem;font-weight:800}
+footer{background:#314239;color:#eaf4ec;text-align:center;padding:35px 22px}
+.small{font-size:.9rem;color:var(--muted)}
+footer .small{color:#c9d8ce}
+.to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;border:0;background:var(--sage-dark);color:#fff;cursor:pointer;display:none;z-index:30}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr}.hero-art{min-height:380px}
+ .grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}
+ nav{display:none}.menu{display:block;margin-left:auto}
+ nav.open{display:flex;position:absolute;left:0;right:0;top:68px;background:var(--cream);padding:12px 18px;flex-wrap:wrap;border-bottom:1px solid #e9eee9}
+}
+@media(max-width:620px){
+ main{padding:10px 16px 60px}.grid,.grid2,.compare,.checklist,.steps{grid-template-columns:1fr}
+ section{padding:45px 0}.blob{width:290px;height:290px}.mirror{width:180px;height:225px}.float{font-size:.85rem}
+ h1{font-size:3.2rem}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="#beranda">🌱 RUANG DIRI<span>Aku Unik, Aku Percaya Diri</span></a>
+    <button class="menu" onclick="toggleMenu()">☰</button>
+    <nav id="nav">
+      <a href="#beranda">🏠 Beranda</a>
+      <a href="#mengenal">🪞 Mengenal Diri</a>
+      <a href="#kelebihan">⭐ Kelebihan</a>
+      <a href="#kekurangan">🌱 Kekurangan</a>
+      <a href="#bagian">⚖️ Bagian Diriku</a>
+      <a href="#percaya">🌈 Percaya Diri</a>
+      <a href="#minder">💭 Minder</a>
+      <a href="#menerima">🧠 Menerima Diri</a>
+      <a href="#membangun">🌱 Membangun</a>
+      <a href="#bicara">💬 Bicara</a>
+      <a href="#refleksi">💌 Refleksi</a>
+      <a href="#penutup">🌟 Penutup</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="beranda" class="hero">
+  <div>
+    <span class="badge">LAYANAN PRIBADI BK</span>
+    <h1>Ruang<br><span style="color:var(--sage-dark)">Diri</span></h1>
+    <p style="font-size:1.45rem;font-weight:800">Aku Unik, Aku Percaya Diri.</p>
+    <p class="lead">Mengenal diri, menerima diri, dan berani menjadi diri sendiri.</p>
+    <p>Setiap orang itu unik. Termasuk kamu. Kamu tidak harus menjadi seperti orang lain untuk menjadi berharga.</p>
+    <a class="btn" href="#mengenal">Mulai Menjelajahi Ruang Diri →</a>
+  </div>
+  <div class="hero-art">
+    <div class="blob"></div><div class="mirror"></div>
+    <div class="float f1">🪞 Kenali dirimu</div>
+    <div class="float f2">⭐ Hargai dirimu</div>
+    <div class="float f3">🌱 Terus bertumbuh</div>
+  </div>
+</section>
+
+<section>
+ <div class="grid">
+  <div class="card soft-green"><div class="icon">🪞</div><h3>Mengenal Diri</h3><p>Memahami siapa dirimu, apa yang kamu sukai, dan apa yang menjadi kekuatanmu.</p></div>
+  <div class="card soft-pink"><div class="icon">⭐</div><h3>Menghargai Diri</h3><p>Mengenali kelebihan dan menerima hal-hal yang masih ingin kamu kembangkan.</p></div>
+  <div class="card soft-yellow"><div class="icon">🌱</div><h3>Mengembangkan Diri</h3><p>Belajar, mencoba, dan tumbuh menjadi versi dirimu sendiri.</p></div>
+ </div>
+</section>
+
+<section id="mengenal">
+ <div class="section-head"><div class="eyebrow">02 · MENGENAL DIRI</div><h2>Sebenarnya, siapa aku?</h2><p class="lead">Mengenal diri adalah proses memahami sifat, minat, kemampuan, kebiasaan, perasaan, kelebihan, dan kekurangan yang kita miliki.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">🎨</div><h3>Aku suka...</h3><p>Menggambar, bermusik, berolahraga, membaca, bersosialisasi, atau melakukan hal lain yang membuatmu tertarik.</p></div>
+  <div class="card"><div class="icon">💬</div><h3>Aku nyaman ketika...</h3><p>Berbicara dengan teman, melakukan hal kreatif, memiliki waktu sendiri, atau bekerja bersama orang lain.</p></div>
+  <div class="card"><div class="icon">💡</div><h3>Aku punya kemampuan dalam...</h3><p>Akademik, seni, olahraga, komunikasi, kreativitas, atau bidang lain yang terus ingin kamu kembangkan.</p></div>
+ </div>
+ <div class="quote">“Mengenal diri bukan tentang mencari kesempurnaan, tetapi memahami siapa dirimu.”</div>
+</section>
+
+<section id="kelebihan">
+ <div class="section-head"><div class="eyebrow">03 · KELEBIHAN DIRI</div><h2>“Ternyata aku punya banyak hal yang bisa dibanggakan.”</h2><p class="lead">Kelebihan adalah kemampuan atau sifat positif yang menjadi kekuatan dalam diri seseorang.</p></div>
+ <div class="grid2">
+  <div class="card soft-blue"><div class="icon">💡</div><h3>Kelebihan dalam kemampuan</h3><div class="pill-list"><span class="pill">Olahraga</span><span class="pill">Seni</span><span class="pill">Akademik</span><span class="pill">Komunikasi</span><span class="pill">Kreativitas</span></div></div>
+  <div class="card soft-green"><div class="icon">💚</div><h3>Kelebihan dalam sikap</h3><div class="pill-list"><span class="pill">Sabar</span><span class="pill">Bertanggung jawab</span><span class="pill">Peduli</span><span class="pill">Jujur</span><span class="pill">Mau bekerja sama</span></div></div>
+ </div>
+ <div class="card" style="margin-top:18px"><h3>⭐ Temukan 3 kelebihanmu</h3><p>Tuliskan tiga hal yang kamu anggap sebagai kekuatan dalam dirimu.</p><div class="checklist"><textarea placeholder="1. Kelebihanku..."></textarea><textarea placeholder="2. Kelebihanku..."></textarea></div><textarea style="margin-top:12px" placeholder="3. Kelebihanku..."></textarea></div>
+ <div class="quote">Kelebihan bukan untuk membuat kita lebih tinggi dari orang lain, tetapi menjadi modal untuk berkembang.</div>
+</section>
+
+<section id="kekurangan">
+ <div class="section-head"><div class="eyebrow">04 · KEKURANGAN DIRI</div><h2>“Aku tidak sempurna, dan itu tidak apa-apa.”</h2><p class="lead">Kekurangan adalah bagian dari diri yang masih perlu diperbaiki atau dikembangkan.</p></div>
+ <div class="grid">
+  <div class="card"><h3>🗣️ “Aku masih malu berbicara di depan kelas.”</h3><p>Kamu bisa mulai dari berbicara dalam kelompok kecil.</p></div>
+  <div class="card"><h3>😶 “Aku mudah gugup bertemu orang baru.”</h3><p>Berikan dirimu waktu untuk beradaptasi dan mulai dari sapaan sederhana.</p></div>
+  <div class="card"><h3>⏰ “Aku masih kesulitan mengatur waktu.”</h3><p>Coba membuat prioritas dan membagi tugas menjadi langkah kecil.</p></div>
+ </div>
+ <div class="compare" style="margin-top:20px">
+  <div class="card x"><h3>❌ “Aku memang tidak bisa.”</h3><p>Pikiran ini membuat kekurangan terasa seperti batas yang tetap.</p></div>
+  <div class="card ok"><h3>✅ “Aku masih belajar untuk bisa.”</h3><p>Kalimat ini membuka ruang untuk belajar dan berkembang.</p></div>
+ </div>
+</section>
+
+<section id="bagian">
+ <div class="section-head"><div class="eyebrow">05 · BAGIAN DARI DIRIKU</div><h2>Kelebihan dan kekurangan sama-sama bagian dari diriku.</h2><p class="lead">Bayangkan dirimu seperti sebuah puzzle. Setiap bagian memiliki bentuk berbeda, tetapi semuanya ikut membentuk gambaran diri.</p></div>
+ <div class="grid2">
+  <div class="card soft-green"><h3>🌱 Kenali</h3><p>Kenali kelebihan dan hal yang masih ingin kamu kembangkan.</p></div>
+  <div class="card soft-pink"><h3>💚 Terima</h3><p>Terima dirimu tanpa harus merendahkan diri sendiri.</p></div>
+ </div>
+ <div class="quote" style="text-align:center">Mengenali kelebihan → menerima kekurangan → terus berkembang.</div>
+</section>
+
+<section id="percaya">
+ <div class="section-head"><div class="eyebrow">06 · PERCAYA DIRI</div><h2>Percaya pada diri sendiri, bukan merasa paling hebat.</h2><p class="lead">Percaya diri adalah kemampuan untuk mempercayai diri sendiri, menghargai kemampuan yang dimiliki, dan berani menghadapi berbagai situasi.</p></div>
+ <div class="compare">
+  <div class="card x"><h3>❌ Percaya diri bukan...</h3><ul><li>Selalu menjadi juara</li><li>Selalu berani</li><li>Tidak pernah salah</li><li>Selalu mendapat pujian</li><li>Merasa lebih hebat dari orang lain</li></ul></div>
+  <div class="card ok"><h3>✅ Percaya diri adalah...</h3><ul><li>Berani mencoba</li><li>Berani menyampaikan pendapat</li><li>Menerima kekurangan diri</li><li>Menghargai kelebihan diri</li><li>Belajar dari kesalahan</li><li>Berani menjadi diri sendiri</li></ul></div>
+ </div>
+ <div class="quote">Orang yang percaya diri juga bisa takut, gugup, atau malu. Ia tetap berani melangkah.</div>
+</section>
+
+<section id="minder">
+ <div class="section-head"><div class="eyebrow">07 · KETIKA AKU MERASA MINDER</div><h2>“Aku nggak cukup baik...”</h2><p class="lead">Rasa minder dapat muncul ketika kita merasa tidak cukup baik dibandingkan orang lain. Perasaan itu manusiawi.</p></div>
+ <div class="chat">
+  <div class="bubble no">“Dia lebih pintar dariku.”</div><div class="bubble no">“Aku nggak sehebat dia.”</div><div class="bubble no">“Aku takut kalau salah.”</div><div class="bubble no">“Aku nggak punya kelebihan.”</div>
+ </div>
+ <div class="card soft-green" style="margin-top:28px;text-align:center"><h3>🌱 Ingat ini</h3><p style="font-size:1.2rem;font-weight:800">Kelebihan orang lain tidak menghapus kelebihan yang kamu miliki.</p><p>Setiap orang memiliki kemampuan, pengalaman, dan proses yang berbeda.</p></div>
+</section>
+
+<section id="menerima">
+ <div class="section-head"><div class="eyebrow">08 · MENERIMA DIRI</div><h2>Menerima diri bukan berarti berhenti berkembang.</h2><p class="lead">Kita boleh berusaha menjadi lebih baik tanpa harus membenci diri kita yang sekarang.</p></div>
+ <div class="grid">
+  <div class="card soft-green"><h3>“Aku tahu aku punya kelebihan.”</h3></div>
+  <div class="card soft-blue"><h3>“Aku tahu aku punya kekurangan.”</h3></div>
+  <div class="card soft-pink"><h3>“Aku tidak sempurna.”</h3></div>
+ </div>
+ <div class="quote" style="text-align:center">“Tapi aku tetap berharga.”</div>
+ <p style="text-align:center">Perubahan yang sehat dimulai dari penerimaan, bukan kebencian terhadap diri sendiri.</p>
+</section>
+
+<section id="membangun">
+ <div class="section-head"><div class="eyebrow">09 · MEMBANGUN KEPERCAYAAN DIRI</div><h2>Kepercayaan diri tumbuh dari kebiasaan kecil.</h2></div>
+ <div class="steps">
+  <div class="step"><div class="num">1</div><h3>Kenali</h3><p>Ketahui kekuatan dan hal yang masih perlu dikembangkan.</p></div>
+  <div class="step"><div class="num">2</div><h3>Hargai</h3><p>Jangan merendahkan diri hanya karena melakukan kesalahan.</p></div>
+  <div class="step"><div class="num">3</div><h3>Berani</h3><p>Tidak perlu menunggu sempurna untuk memulai.</p></div>
+  <div class="step"><div class="num">4</div><h3>Belajar</h3><p>Kesalahan bukan bukti bahwa kamu gagal selamanya.</p></div>
+  <div class="step"><div class="num">5</div><h3>Hargai proses</h3><p>Perkembangan kecil tetap merupakan perkembangan.</p></div>
+ </div>
+ <div class="quote">Percaya diri tidak tumbuh dalam satu hari. Ia tumbuh dari keberanian-keberanian kecil yang dilakukan berulang kali.</div>
+</section>
+
+<section id="bicara">
+ <div class="section-head"><div class="eyebrow">10 · BICARA KEPADA DIRI</div><h2>Perhatikan cara kamu berbicara kepada dirimu sendiri.</h2></div>
+ <div class="chat">
+  <div class="bubble no">❌ “Aku bodoh.”</div><div class="bubble yes">✅ “Aku masih perlu belajar.”</div>
+  <div class="bubble no">❌ “Aku nggak bisa.”</div><div class="bubble yes">✅ “Aku belum bisa.”</div>
+  <div class="bubble no">❌ “Aku lebih buruk daripada dia.”</div><div class="bubble yes">✅ “Aku punya kelebihan dan prosesku sendiri.”</div>
+  <div class="bubble no">❌ “Aku takut gagal.”</div><div class="bubble yes">✅ “Aku akan mencoba dan belajar dari hasilnya.”</div>
+ </div>
+ <div class="quote" style="text-align:center">Cara kita berbicara kepada diri sendiri dapat memengaruhi cara kita melihat diri sendiri.</div>
+</section>
+
+<section id="refleksi">
+ <div class="section-head"><div class="eyebrow">11 · REFLEKSI DIRI</div><h2>Sekarang giliran kamu.</h2><p class="lead">Tidak ada jawaban yang paling benar. Jawablah dengan jujur sesuai dirimu.</p></div>
+ <div class="reflection">
+  <div class="progress"><span id="progress"></span></div>
+  <div class="question"><strong>01. Apa satu kelebihan yang paling kamu hargai dari dirimu?</strong><textarea class="ref" placeholder="Tulis jawabanmu..."></textarea></div>
+  <div class="question"><strong>02. Apa satu hal yang ingin kamu kembangkan?</strong><textarea class="ref" placeholder="Tulis jawabanmu..."></textarea></div>
+  <div class="question"><strong>03. Selama ini, apakah kamu lebih sering melihat kelebihan atau kekuranganmu?</strong><textarea class="ref" placeholder="Tulis jawabanmu..."></textarea></div>
+  <div class="question"><strong>04. Apa yang biasanya membuatmu merasa tidak percaya diri?</strong><textarea class="ref" placeholder="Tulis jawabanmu..."></textarea></div>
+  <div class="question"><strong>05. Apa yang bisa kamu lakukan ketika rasa minder muncul?</strong><textarea class="ref" placeholder="Tulis jawabanmu..."></textarea></div>
+  <div class="question"><strong>06. Setelah membaca materi ini, apa arti percaya diri menurutmu?</strong><textarea class="ref" placeholder="Tulis jawabanmu..."></textarea></div>
+  <button class="btn" onclick="saveReflection()">💾 Simpan Refleksiku di Perangkat</button>
+  <p id="saved" class="small"></p>
+ </div>
+ <div class="card soft-yellow" style="margin-top:20px;text-align:center"><h3>🌟 Tantangan kecil</h3><p>“Tuliskan satu kalimat positif untuk dirimu sendiri hari ini.”</p><p><strong>“Aku mungkin belum sempurna, tetapi aku terus belajar menjadi lebih baik.”</strong></p></div>
+</section>
+
+<section id="penutup" class="closing">
+ <div>
+  <div class="eyebrow">12 · PENUTUP</div>
+  <h2>🌟 Aku Unik, Aku Percaya Diri</h2>
+  <p class="lead" style="margin:auto">Kamu tidak harus menjadi yang paling pintar. Kamu tidak harus menjadi yang paling berani. Kamu tidak harus memiliki kemampuan yang sama dengan orang lain.</p>
+  <div class="mantra">
+   <div>🌱 Aku punya kelebihan.</div><div>🌱 Aku punya kekurangan.</div><div>🌱 Aku tidak harus sempurna.</div><div>🌱 Aku tetap berharga.</div><div>🌱 Aku unik.</div><div>⭐ Aku percaya diri.</div>
+  </div>
+  <a class="btn" href="#beranda">Kembali ke Beranda ↑</a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <strong>🌱 RUANG DIRI</strong>
+ <p>Website layanan pribadi Bimbingan dan Konseling</p>
+ <p class="small">Mengenal diri · Menerima diri · Berani menjadi diri sendiri</p>
+</footer>
+<button class="to-top" id="top" onclick="location.href='#beranda'">↑</button>
+
+<script>
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+const links=[...document.querySelectorAll('#nav a')];
+const sections=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}})
+},{rootMargin:'-25% 0px -65% 0px'});
+sections.forEach(s=>observer.observe(s));
+const refs=[...document.querySelectorAll('.ref')], progress=document.getElementById('progress');
+refs.forEach((el,i)=>{el.value=localStorage.getItem('ruangDiri_'+i)||'';el.addEventListener('input',()=>{localStorage.setItem('ruangDiri_'+i,el.value);updateProgress()})});
+function updateProgress(){let n=refs.filter(x=>x.value.trim()).length;progress.style.width=(n/refs.length*100)+'%'}
+function saveReflection(){refs.forEach((el,i)=>localStorage.setItem('ruangDiri_'+i,el.value));document.getElementById('saved').textContent='Refleksi tersimpan di perangkat ini. Jawabanmu tidak dikirim ke internet.'}
+updateProgress();
+window.addEventListener('scroll',()=>document.getElementById('top').style.display=scrollY>500?'block':'none');
+</script>
+</body>
+</html>
